@@ -1,3 +1,4 @@
 base:
   '*hadoop*':
     - hadoop      
+    - hbase

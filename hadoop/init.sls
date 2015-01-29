@@ -30,6 +30,8 @@ Export JAVA_HOME:
     - user: hadoop
     - group: hadoop
     - mode: 644
+
+Extract Hadoop:
   cmd.run:
     - name: tar -zxvf hadoop.tar.gz
     - user: hadoop
@@ -65,6 +67,22 @@ Export JAVA_HOME:
     - group: hadoop
     - mode: 644
 
+/opt/hadoop/hadoop-2.6.0/etc/hadoop/mapred-site.xml:
+  file: 
+    - managed
+    - source: salt://hadoop/mapred-site.xml
+    - user: hadoop
+    - group: hadoop
+    - mode: 644
+
+/opt/hadoop/hadoop-2.6.0/etc/hadoop/yarn-site.xml:
+  file: 
+    - managed
+    - source: salt://hadoop/yarn-site.xml
+    - user: hadoop
+    - group: hadoop
+    - mode: 644
+
 # Should run only once. Echo N will take care of it.
 Format Hadoop NameNode:
   cmd.run:
@@ -79,22 +97,23 @@ Start_Hadoop:
     - user: hadoop
     - unless: "`jps | grep -c NameNode` -gt 0" 
 
+Start Yarn:
+  cmd.run: 
+    - name: sbin/start-yarn.sh
+    - cwd: /opt/hadoop/hadoop-2.6.0
+    - user: hadoop
+
 Create Dir User:
   cmd.run: 
     - name: echo N |bin/hdfs dfs -mkdir /user
     - cwd: /opt/hadoop/hadoop-2.6.0
     - user: hadoop
-    - requires:
-       - cmd: Start_Hadoop
 
 Create Dir User/hadoop:
   cmd.run: 
     - name: echo N | bin/hdfs dfs -mkdir /user/hadoop
     - cwd: /opt/hadoop/hadoop-2.6.0
     - user: hadoop
-    - unless 
-    - requires:
-       - cmd: Start_Hadoop
 
 
 
