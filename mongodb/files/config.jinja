@@ -1,0 +1,21 @@
+# This file is managed by Salt!
+
+port = {{ port }}
+
+logpath = {{ logpath }}
+
+{% if mongos == False -%}
+dbpath = {{ dbpath }}
+{% endif %}
+
+{% if replica_set -%}
+replSet = {{ replica_set.get('name') }}
+{% endif %}
+
+{% if config_svr == True %}
+configsvr=true
+{% endif %}
+
+{% if shard_svr == True %}
+shardsvr=true
+{% endif %}
