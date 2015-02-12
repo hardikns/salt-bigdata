@@ -4,4 +4,4 @@ mine_functions:
   grains.items: []
   prodapt_ip_addrs:
     mine_function: network.ip_addrs
-    cidr: 192.168.56.0/24
+    cidr: 192.168.26.0/24

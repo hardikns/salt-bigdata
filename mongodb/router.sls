@@ -1,36 +1,4 @@
 #!pydsl
-"""{%- set mongo_config_ips = salt['mine.get']('roles:mongo-config', 'prodapt_ip_addrs', 'grain').values() %}
-{%- set config_ip_string = mongo_config_ips|formatmineiplist("27019") %}
-{%- print mongo_config_ips %}
-{% set p  = salt['pillar.get']('mongo-router', {}) %}
-{% set log_path     = p.get("log_path", "/var/log/mongo/mongos.log") %}
-{% set port         = p.get("port", "27017") %}
-{% set conf_file    = p.get("conf_file", "/opt/mongo/mongodb/conf/mongos.conf") %}
-
-
-mongos_configuration:
-  file.managed:
-    - name: {{ conf_file }}
-    - user: root
-    - group: root
-    - mode: 644
-    - source: salt://mongodb/files/config.jinja
-    - template: jinja
-    - context:
-        dbpath: {{ "" }}
-        logpath: {{ log_path }}
-        port: {{ port }}
-        replica_set: False
-        config_svr: False
-        shard_svr: False
-        mongos: True
-
-Start Mongos-Router:
-  cmd.run:
-    - name: "mongos --config {{ conf_file }} --configdb {{ config_ip_string }}" 
-    - cwd: /opt/mongo/mongodb/bin
-    - user: mon
-"""
 
 def convert_ip_data(data, ip):
     delim = ':' + ip + ','

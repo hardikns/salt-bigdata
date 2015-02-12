@@ -1,4 +1,4 @@
-Create Flume user:
+Create Mongo user:
   user.present:
     - name: mongo
     - gid_from_name: True

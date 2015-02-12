@@ -13,3 +13,7 @@ base:
   'roles:mongo-shard':
     - match: grain
     - mongo.shard
+
+  'roles:hadoop*':
+    - match: grain
+    - hadoop

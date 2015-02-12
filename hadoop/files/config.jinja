@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
+
+<configuration>
+{%- for name, subdict in dyn_cfg.items() %}
+    <property>
+        <name>{{ name }}</name>
+{%- for k,v in subdict.items() %}
+        <{{k}}>{{ v }}</{{k}}>
+{%- endfor %}
+    </property>
+
+{%- endfor %}
+</configuration>

@@ -95,11 +95,26 @@ Salt Setup
   
         sudo salt '*' state.highstate 
 
+
+
 Help on Scripts
 ---------------
+  The scripts support roles which are setup as grains in minions. The following is a sample 
+  grains file `/etc/salt/grains`
 
-  There are following different minion_ids that is supported:
+        roles:
+          - mongo-config
+          - mongo-shard
+          - mongo-router
+          - hadoop-master
+          - hadoop-slave
 
-        *hadoop*       - is for hadoop base setup  
-        *hadoop-master - is for hadoop master  
-        *hadoop-slave  - is for hadoop slave  
+  Based on the roles the script auto-adjusts and sets up the server. 
+
+
+
+
+
+
+
+

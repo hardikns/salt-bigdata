@@ -1,7 +1,7 @@
 base:
-  '*':
+  'roles:mongo*':
+    - match: grain
     - mongodb
-
 
   'roles:mongo-config':
     - match: grain
@@ -16,3 +16,6 @@ base:
     - mongodb.router
     - mongodb.mongos-connect-shard
 
+  'roles:hadoop*':
+    - match: grain
+    - hadoop
