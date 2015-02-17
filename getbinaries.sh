@@ -13,3 +13,17 @@ cd mongodb
 wget https://fastdl.mongodb.org/linux/mongodb-linux-x86_64-2.6.7.tgz
 mv mongodb-linux-x86_64-2.6.7.tgz mongodb-linux-x86_64-2.6.7.tar.gz
 cd ..
+cd sqoop
+wget http://apache.bytenet.in/sqoop/1.4.5/sqoop-1.4.5.bin__hadoop-2.0.4-alpha.tar.gz
+cd ..
+cd hive
+wget http://apache.bytenet.in/hive/stable/apache-hive-1.0.0-bin.tar.gz
+wget http://cdn.mysql.com/Downloads/Connector-J/mysql-connector-java-5.1.34.tar.gz
+cd ..
+cd mongo-hadoop
+wget https://github.com/mongodb/mongo-hadoop/releases/download/r1.3.2/flume-1.3.2.jar
+wget https://github.com/mongodb/mongo-hadoop/releases/download/r1.3.2/mongo-hadoop-core-1.3.2.jar
+wget https://github.com/mongodb/mongo-hadoop/releases/download/r1.3.2/mongo-hadoop-hive-1.3.2.jar
+wget https://github.com/mongodb/mongo-hadoop/releases/download/r1.3.2/mongo-hadoop-streaming-1.3.2.jar
+wget http://central.maven.org/maven2/org/mongodb/mongo-java-driver/2.9.3/mongo-java-driver-2.9.3.jar
+cd ..

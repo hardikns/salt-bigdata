@@ -19,3 +19,14 @@ base:
   'roles:hadoop*':
     - match: grain
     - hadoop
+
+  'roles:sqoop':
+    - match: grain
+    - sqoop  
+
+  'roles:hive':
+    - match: grain
+    - hive      
+
+  '*':
+    - mongo-hadoop
