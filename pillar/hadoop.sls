@@ -20,6 +20,8 @@ hadoop:
         value: 134217728 
       dfs.namenode.handler.count:
         value: 100
+      dfs.permissions.superusergroup:
+        value: hadoop
     yarn-site:
       yarn.log-aggregation-enable:
         value: true
@@ -32,7 +34,7 @@ hadoop:
       yarn.nodemanager.aux-services:
         value: mapreduce_shuffle
       yarn.nodemanager.resource.memory-mb:
-        value: 2000
+        value: 2048
       yarn.log-aggregation.retain-seconds:
         value: -1
       yarn.log-aggregation.retain-check-interval-seconds: 

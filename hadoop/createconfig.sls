@@ -31,6 +31,7 @@ if 'hadoop-master' in roles:
 
 if 'hadoop-slave' in roles:
     hdfs_site['dfs.datanode.data.dir'] = {'value' : ','.join(dn_dirs)}
+    yarn_site['yarn.resourcemanager.hostname'] = {'value': hadoop_master_ips[0]}
 
 cs = state("core-site")
 cs.file("managed", \
