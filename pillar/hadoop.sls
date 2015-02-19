@@ -43,13 +43,13 @@ hadoop:
       mapreduce.framework.name:
         value: yarn
       mapreduce.map.memory.mb:
-        value: 1536
+        value: 1024
       mapreduce.map.java.opts:
         value: -Xmx1024M
       mapreduce.reduce.memory.mb:
-        value: 3072
+        value: 2048
       mapreduce.reduce.java.opts:
-        value: -Xmx2560M
+        value: -Xmx2048M
       mapreduce.task.io.sort.mb:
         value: 512
       mapreduce.task.io.sort.factor:
