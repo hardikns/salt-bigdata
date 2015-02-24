@@ -33,7 +33,7 @@ saltmaster() {
 }
 
 read -p "Configuring this as Salt-Master [Y/n]:" choice
-#addrepos
+addrepos
 if [ $choice == 'n' ]; then
     saltminion
 else
