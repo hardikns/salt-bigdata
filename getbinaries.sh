@@ -7,7 +7,7 @@ wget http://apache.bytenet.in/hbase/stable/hbase-0.98.9-hadoop2-bin.tar.gz
 cd ..
 cd flume
 #Flume binary 
-#wget http://apache.bytenet.in/flume/1.5.2/apache-flume-1.5.2-bin.tar.gz
+wget https://drive.google.com/file/d/0B8CZ9QLchKY9VE5MQnFwN0RQdXc/view?usp=sharing
 cd ..
 cd mongodb
 wget https://fastdl.mongodb.org/linux/mongodb-linux-x86_64-2.6.7.tgz
