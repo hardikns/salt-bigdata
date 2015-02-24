@@ -3,9 +3,6 @@ hadoop:
     /opt/hadoop/hadoop-2.6.0/
   data-dirs:
     - data1
-    - data2
-    - data3
-    - data4
   config:
     directory: etc/hadoop
     core-site:

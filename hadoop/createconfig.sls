@@ -14,7 +14,7 @@ hadoop_slave_count = len(__salt__['mine.get']('roles:hadoop-slave', 'prodapt_ip_
 
 core_site['fs.defaultFS'] = {'value': "hdfs://" + hadoop_master_ips[0] + ":9000/"}    
 
-hdfs_site['dfs.replication'] = {'value':3 if hadoop_slave_count>3 else hadoop_slave_count}
+hdfs_site['dfs.replication'] = {'value':3 if hadoop_slave_count>3 else (hadoop_slave_count - 1 or 1)}
 
 nn_dirs = []
 dn_dirs = []
