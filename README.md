@@ -1,4 +1,4 @@
-WinStream BigData POC - SaltStack Scripts  
+BigData - SaltStack Scripts  
 =========================================
 
 Purpose
