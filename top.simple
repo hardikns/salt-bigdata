@@ -1,0 +1,9 @@
+base:
+  'custom_roles:web*':
+    - match: grain
+    - nginx
+
+  'custom_roles:db*':
+    - match: grain
+    - mysql
+
